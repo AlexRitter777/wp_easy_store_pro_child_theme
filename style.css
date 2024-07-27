@@ -1,0 +1,160 @@
+/*
+Theme Name: EasyStore Pro RW extension
+Template: easy-store-pro
+Author: Alexej Bogačev
+Description: This is a child theme of EasyStore Pro.
+Version: 1.0.0
+*/
+
+
+
+h2.woocommerce-loop-product__title {
+    height: 70px;
+    overflow: overlay;
+    font-size: 1em;
+    line-height: normal;
+    font-weight: 600;
+}
+
+.es-cat-products-wrapper li {
+
+    width: 31.3%!important;
+}
+
+#site-navigation ul li a {
+    font-weight: 600;
+}
+
+.widget_product_categories .widget-title {
+    padding-top: 20px!important;
+}
+
+.woocommerce .product-categories li a {
+    margin-bottom: 7px!important;
+}
+
+.cat-item.current-cat a {
+    color: black;
+}
+
+
+.es-section-wrapper .mt-container {
+    width: unset;
+}
+
+.front-page-widgets-area {
+    float: left;
+    width: 73%;
+}
+
+#sidebar-shop  {
+    float: left;
+}
+
+.show-categories {
+    display: block!important;
+
+}
+
+.notice {
+    padding: 15px;
+    margin: 20px 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    position: relative;
+    /*font-weight: bold;*/
+}
+
+
+.notice-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+
+
+.is-dismissible {
+    position: relative;
+    padding-right: 35px;
+}
+
+
+
+
+
+@media (max-width: 840px) {
+
+    .widget_product_categories {
+        font-size: 0.9em;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .es-cat-products-wrapper .product {
+        width: 48%!important;
+    }
+
+
+    .front-page-widgets-area {
+        width: 100%;
+    }
+
+    #sidebar-shop{
+        text-align: center;
+    }
+
+    .widget_product_categories {
+        padding-bottom: 0!important;
+        margin-bottom: 0!important;
+
+    }
+
+    .widget_product_categories  .widget-title {
+        border: 1px solid #337ebf;
+        padding: 10px;
+        background-color: #337ebf;
+        color: #fff;
+        margin: 10px auto 10px;
+        width: 50%;
+        cursor: pointer;
+    }
+
+    .widget_product_categories ul {
+        margin-top: 10px!important;
+        display: none;
+
+    }
+
+    .custom-header {
+        margin-bottom: 10px!important;
+    }
+
+    .mCSB_inside>.mCSB_container {
+        margin-right: 0!important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .es-cat-products-wrapper .product {
+        width: 97% !important;
+    }
+
+    .widget_product_categories .widget-title {
+        font-size: 1.3em;
+    }
+
+
+}
+
+@media (max-width: 400px) {
+
+    .widget_product_categories .widget-title {
+        font-size: 1.1em;
+    }
+
+
+}
