@@ -79,7 +79,10 @@ h2.woocommerce-loop-product__title {
 }
 
 
-
+/* Advanced product search "Hide category select" */
+.advance-product-search .woocommerce-product-search select{
+    display: none;
+}
 
 
 @media (max-width: 840px) {
