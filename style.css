@@ -84,6 +84,10 @@ h2.woocommerce-loop-product__title {
     display: none;
 }
 
+/* YouTube icon color */
+.es-social-icons-wrapper a .fa-youtube-play {
+    color: #f20914;
+}
 
 @media (max-width: 840px) {
 
