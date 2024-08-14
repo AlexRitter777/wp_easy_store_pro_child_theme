@@ -95,5 +95,13 @@ endif;
 add_action('woocommerce_checkout_before_customer_details', 'easy_store_woocommerce_checkout_add_info', 5);
 
 
+/**
+ * Disable image zoom on WooCommerce product pages
+ *
+ */
+function disable_woocommerce_image_zoom() {
+    remove_theme_support( 'wc-product-gallery-zoom' );
+}
+add_action( 'after_setup_theme', 'disable_woocommerce_image_zoom', 100 );
 
 
