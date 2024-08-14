@@ -1,6 +1,11 @@
 <?php
 
-function easystore_pro_child_enqueue_styles() {
+/**
+ * Enqueue styles and scripts for the child theme.
+ *
+ * This function loads the parent theme's stylesheet and enqueues a custom JavaScript file from the child theme.
+ */
+function easy_store_pro_lion_child_enqueue_styles() {
 
     wp_enqueue_style(
         'grand-sunrise-parent-style',
@@ -11,7 +16,19 @@ function easystore_pro_child_enqueue_styles() {
 
 }
 
-add_action('wp_enqueue_scripts', 'easystore_pro_child_enqueue_styles');
+add_action('wp_enqueue_scripts', 'easy_store_pro_lion_child_enqueue_styles');
+
+
+/**
+ * Load the plugin text domain for translations
+ */
+function easy_store_pro_lion_load_textdomain() {
+
+    load_child_theme_textdomain('easy-store-pro-lion', get_stylesheet_directory() . '/languages');
+
+}
+
+add_action('after_setup_theme', 'easy_store_pro_lion_load_textdomain');
 
 
 /**
@@ -20,8 +37,8 @@ add_action('wp_enqueue_scripts', 'easystore_pro_child_enqueue_styles');
  * This function includes the sidebar widget before other main widget areas in the HTML structure
  * on the front page.
  */
-if ( ! function_exists( 'easy_store_front_page_side_bar_area' ) ) :
-    function easy_store_front_page_side_bar_area() {
+if ( ! function_exists( 'easy_store_pro_lion_front_page_side_bar_area' ) ) :
+    function easy_store_pro_lion_front_page_side_bar_area() {
         if ( is_front_page() ) {
 
             echo '<div id="sidebar-shop" class="widget-area sidebar" style="display: block" role="complementary">';
@@ -37,8 +54,7 @@ if ( ! function_exists( 'easy_store_front_page_side_bar_area' ) ) :
     }
 endif;
 
-add_action( 'easy_store_before_content', 'easy_store_front_page_side_bar_area', 4 );
-
+add_action( 'easy_store_before_content', 'easy_store_pro_lion_front_page_side_bar_area', 4 );
 
 
 // Remove the current hook for the sidebar, if it hasn't been removed already
@@ -55,53 +71,29 @@ add_action( 'woocommerce_before_main_content', 'easy_store_woocommerce_get_sideb
  */
 if ( ! function_exists( 'easy_store_woocommerce_checkout_add_info' ) ) :
 
-    function easy_store_woocommerce_checkout_add_info(){
-        if($_SERVER['SERVER_NAME'] == 'diabetyk1.pl') {
-            //PL
-            echo '
-             
-            <div class="notice notice-warning is-dismissible">
-                <p>Jeśli potrzebujesz faktury na adres inny niż adres dostawy, proszę wypełnić pola <i style="text-transform: capitalize">adres rozliczeniowy</i>, a następnie osobno wypełnić pola <i style="text-transform: capitalize">adres dostawy</i></p>
-                <p>Proszę dokładnie sprawdzić wszystkie dane, ponieważ faktur nie będzie można zmienić na inne nazwisko.</p>
-            </div>         
-        
-           ';
-        }elseif ($_SERVER['SERVER_NAME'] == 'sensor.loc'){
-            //TEST
-            echo '
-             
-            <div class="notice notice-warning is-dismissible">
-                <p>If you need an invoice addressed differently from the delivery address, please fill in the <i style="text-transform: capitalize">billing address</i> fields and then separately fill the <i style="text-transform: capitalize">shipping address</i> fields.</p>
-                <p>Please double-check all the information, as invoices cannot be changed to a different name.</p>
-            </div>         
-        
-           ';
-        }elseif ($_SERVER['SERVER_NAME'] == 'diabet1.ro'){
+    function easy_store_pro_lion_woocommerce_checkout_add_info(){
+        echo '
+            <div class="es-lion-notice es-lion-notice-warning es-lion-is-dismissible">
+                <p>' . __('If you need an invoice addressed differently from the delivery address, please fill in the <i style="text-transform: capitalize">billing address</i> fields and then separately fill the <i style="text-transform: capitalize">shipping address</i> fields.', 'easy-store-pro-lion') . '</p>
+                <p>' . __('Please double-check all the information, as invoices cannot be changed to a different name.', 'easy-store-pro-lion') . '</p>
+            </div>
+        ';
 
-            echo '
-             
-            <div class="notice notice-warning is-dismissible">
-                <p>Dacă aveți nevoie de o factură pe o adresă diferită de adresa de livrare, vă rugăm să completați câmpurile <i style="text-transform: capitalize">adresă de facturare</i> și apoi să completați separat câmpurile <i style="text-transform: capitalize">adresă de livrare</i>.</p>
-                <p>Vă rugăm să verificați cu atenție toate datele, deoarece facturile nu pot fi modificate pe un alt nume.</p>
-            </div>         
-        
-           ';
 
-        }
    }
 
 endif;
 
-add_action('woocommerce_checkout_before_customer_details', 'easy_store_woocommerce_checkout_add_info', 5);
+add_action('woocommerce_checkout_before_customer_details', 'easy_store_pro_lion_woocommerce_checkout_add_info', 5);
 
 
 /**
  * Disable image zoom on WooCommerce product pages
  *
  */
-function disable_woocommerce_image_zoom() {
+function easy_store_pro_lion_disable_woocommerce_image_zoom() {
     remove_theme_support( 'wc-product-gallery-zoom' );
 }
-add_action( 'after_setup_theme', 'disable_woocommerce_image_zoom', 100 );
+add_action( 'after_setup_theme', 'easy_store_pro_lion_disable_woocommerce_image_zoom', 100 );
 
 
