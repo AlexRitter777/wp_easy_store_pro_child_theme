@@ -12,6 +12,10 @@ function easy_store_pro_lion_child_enqueue_styles() {
         get_parent_theme_file_uri( 'style.css' )
     );
 
+    if(!is_product() && !is_product_category() && !is_tag()) {
+        wp_enqueue_style( 'custom-style', get_stylesheet_directory_uri() . '/assets/css/custom-style.css' );
+    }
+
     wp_enqueue_script('child-custom-script', get_stylesheet_directory_uri() . '/assets/js/custom-script.js', array('jquery'), null, true);
 
 }
