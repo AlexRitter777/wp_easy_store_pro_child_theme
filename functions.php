@@ -19,7 +19,6 @@ function easy_store_pro_lion_child_enqueue_styles() {
     wp_enqueue_script('child-custom-script', get_stylesheet_directory_uri() . '/assets/js/custom-script.js', array('jquery'), null, true);
 
 }
-
 add_action('wp_enqueue_scripts', 'easy_store_pro_lion_child_enqueue_styles');
 
 
@@ -31,7 +30,6 @@ function easy_store_pro_lion_load_textdomain() {
     load_child_theme_textdomain('easy-store-pro-lion', get_stylesheet_directory() . '/languages');
 
 }
-
 add_action('after_setup_theme', 'easy_store_pro_lion_load_textdomain');
 
 
@@ -57,7 +55,6 @@ if ( ! function_exists( 'easy_store_pro_lion_front_page_side_bar_area' ) ) :
         }
     }
 endif;
-
 add_action( 'easy_store_before_content', 'easy_store_pro_lion_front_page_side_bar_area', 4 );
 
 
@@ -76,7 +73,7 @@ add_action( 'easy_store_before_page_content', 'easy_store_woocommerce_get_sideba
  *
  * This notice informs customers about invoice details and the importance of verifying their information.
  */
-if ( ! function_exists( 'easy_store_woocommerce_checkout_add_info' ) ) :
+if ( ! function_exists( 'easy_store_pro_lion_woocommerce_checkout_add_info' ) ) :
 
     function easy_store_pro_lion_woocommerce_checkout_add_info(){
         echo '
@@ -90,7 +87,6 @@ if ( ! function_exists( 'easy_store_woocommerce_checkout_add_info' ) ) :
    }
 
 endif;
-
 add_action('woocommerce_checkout_before_customer_details', 'easy_store_pro_lion_woocommerce_checkout_add_info', 5);
 
 
@@ -103,4 +99,25 @@ function easy_store_pro_lion_disable_woocommerce_image_zoom() {
 }
 add_action( 'after_setup_theme', 'easy_store_pro_lion_disable_woocommerce_image_zoom', 100 );
 
+
+/**
+ * Adds custom inline CSS styles for WooCommerce products on small screens.
+ *
+ */
+function  easy_store_pro_lion_add_inline_styles() {
+    echo '<style>
+        @media screen and (max-width: 480px) {
+            .woocommerce ul.products li.product, 
+            .woocommerce-page ul.products li.product {
+                float: left !important;
+                width: 47% !important;
+            }
+            .woocommerce ul.products[class*=columns-] li.product:nth-child(2n),
+            .woocommerce-page ul.products[class*=columns-] li.product:nth-child(2n){
+                float: right !important;
+            }
+        }
+    </style>';
+}
+add_action('wp_head', 'easy_store_pro_lion_add_inline_styles');
 
