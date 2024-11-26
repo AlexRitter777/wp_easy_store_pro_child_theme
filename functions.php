@@ -13,7 +13,7 @@ function easy_store_pro_lion_child_enqueue_styles() {
     );
 
     if(!is_product() && !is_product_category() && !is_tag()) {
-        wp_enqueue_style( 'custom-style', get_stylesheet_directory_uri() . '/assets/css/custom-style.css' );
+        wp_enqueue_style( 'primary', get_stylesheet_directory_uri() . '/assets/css/primary.css' );
     }
 
     wp_enqueue_script('child-custom-script', get_stylesheet_directory_uri() . '/assets/js/custom-script.js', array('jquery'), null, true);
@@ -66,6 +66,9 @@ remove_action( 'woocommerce_sidebar', 'easy_store_woocommerce_get_sidebar', 10 )
 
 // Add a new hook for the sidebar before the list of products
 add_action( 'woocommerce_before_main_content', 'easy_store_woocommerce_get_sidebar', 1);
+
+// Add sidebar before the page content
+add_action( 'easy_store_before_page_content', 'easy_store_woocommerce_get_sidebar', 1);
 
 
 /**

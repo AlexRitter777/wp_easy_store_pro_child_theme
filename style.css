@@ -1,9 +1,9 @@
 /*
 Theme Name: EasyStore Pro RW extension
 Template: easy-store-pro
-Author: Alexej Bogačev
+Author: Alexej Bogačev (RAIN WOLF s.r.o.)
 Description: This is a child theme of EasyStore Pro.
-Version: 1.3.0
+Version: 1.4.0
 */
 
 
@@ -89,6 +89,29 @@ h2.woocommerce-loop-product__title {
     color: #f20914;
 }
 
+
+.widget_product_categories .widget-title{
+    width: 98%!important;
+    font-size: 18px!important;
+}
+
+.widget_product_categories .widget-title i {
+    display: none;
+}
+
+/*--------Login form----------*/
+.woocommerce {
+    border:none!important;
+}
+
+/*--------Contact form----------*/
+.everest-forms-submit-button {
+    background-color: #333!important;
+    border:none!important;
+    border-radius: 0!important;
+}
+
+
 @media (max-width: 840px) {
 
     .widget_product_categories {
@@ -142,6 +165,127 @@ h2.woocommerce-loop-product__title {
     .mCSB_inside>.mCSB_container {
         margin-right: 0!important;
     }
+
+
+    .widget_product_categories .widget-title i {
+        display: unset!important;
+    }
+
+    .es-top-header-wrap {
+        display: none!important;
+    }
+
+    .es-header-logo-wrapper{
+        padding: 10px 0!important;
+    }
+
+    .es-header-area-cart-wrapper{
+        display: none!important;
+    }
+
+    .easy_store_advanced_product_search .search-field {
+        width: 90%!important;
+    }
+
+    .easy_store_advanced_product_search{
+        width: 96% !important;
+        margin: 0 auto 0;
+    }
+
+    .easy_store_advanced_product_search form {
+        margin-bottom: 0!important;
+    }
+
+    #site-header-cart {
+        margin-top: 0!important;
+        margin-right: 10px!important;
+        top: 10px!important;
+        float: right!important;
+
+    }
+
+    #site-header-cart a {
+        border-color: #ffffff!important;
+        color: #ffffff!important;
+    }
+
+    #site-header-cart .cart-icon {
+        width: 30px!important;
+        height: 30px!important;
+        line-height: 28px!important;
+        font-size: 12px!important;
+    }
+
+    #site-header-cart .count{
+        width: 15px!important;
+        height: 15px!important;
+        line-height: 15px!important;
+        font-size: 8px!important;
+    }
+
+    .es-wishlist-wrap{
+        top: 10px!important;
+        position: relative!important;
+        margin-top: 0!important;
+        float: right!important;
+        margin-right: 15px!important;
+    }
+
+    .es-wishlist-wrap a{
+        border-color: #ffffff!important;
+        color: #ffffff!important;
+        width: 30px!important;
+        height: 30px!important;
+        line-height: 28px!important;
+        font-size: 12px!important;
+    }
+
+    .es-wishlist-wrap i{
+        line-height: 31px!important;
+        font-size: 12px!important;
+    }
+
+    .es-wishlist-wrap .es-wl-counter {
+        color: #ffffff!important;
+        background: #337ebf!important;
+        width: 15px!important;
+        height: 15px!important;
+        line-height: 15px!important;
+        font-size: 8px!important;
+    }
+
+    .widget_product_categories .widget-title {
+        margin-top: 0!important;
+    }
+
+    .site-header {
+        margin-bottom: 10px!important;
+    }
+
+    .woocommerce-products-header .easy_store_advanced_product_search {
+        display: none!important;
+    }
+
+    .custom-header {
+        padding: 6px 0!important;
+    }
+
+    .custom-header .entry-title {
+        font-size: 20px!important;
+
+    }
+
+    .custom-header .trail-items {
+        font-size: 12px;
+    }
+
+
+
+
+
+
+
+
 }
 
 @media (max-width: 480px) {
@@ -154,6 +298,9 @@ h2.woocommerce-loop-product__title {
         font-size: 1.3em;
     }
 
+    .easy_store_advanced_product_search .search-field {
+        width: 90%!important;
+    }
 
 }
 
