@@ -11,14 +11,14 @@ Version: 1.6.0
 h2.woocommerce-loop-product__title {
     height: 70px;
     overflow: overlay;
-    font-size: 1em;
+    font-size: 0.9em;
     line-height: normal;
     font-weight: 600;
 }
 
 .es-cat-products-wrapper li {
 
-    width: 31.3%!important;
+    width: 23%!important;
 }
 
 #site-navigation ul li a {
@@ -97,6 +97,15 @@ h2.woocommerce-loop-product__title {
 
 .widget_product_categories .widget-title i {
     display: none;
+}
+
+.es-cat-products-view-more {
+    position: relative!important;
+    text-align: center!important;
+}
+
+.es-cat-products-view-more a:hover {
+    cursor: pointer;
 }
 
 /*--------Login form----------*/
@@ -295,9 +304,9 @@ h2.woocommerce-loop-product__title {
 
 @media (max-width: 480px) {
 
-    .es-cat-products-wrapper .product {
+    /*.es-cat-products-wrapper .product {
         width: 97% !important;
-    }
+    }*/
 
     .widget_product_categories .widget-title {
         font-size: 1.3em;

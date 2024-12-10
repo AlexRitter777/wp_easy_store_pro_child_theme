@@ -121,3 +121,20 @@ function  easy_store_pro_lion_add_inline_styles() {
 }
 add_action('wp_head', 'easy_store_pro_lion_add_inline_styles');
 
+
+
+/**
+ * Require and register new custom widget "RW Category products"
+ */
+require_once get_stylesheet_directory() . '/widgets/rw-es-category-products.php';
+add_action( 'widgets_init', function() {
+    register_widget( 'Rw_Easy_Store_Category_Products' );
+} );
+
+/**
+ * Require and register new custom widget "RW Top selling products"
+ */
+require_once get_stylesheet_directory() . '/widgets/rw-es-top-selling-products.php';
+add_action( 'widgets_init', function() {
+    register_widget( 'Rw_Easy_Store_Top_Selling_Products' );
+} );
