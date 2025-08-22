@@ -3,7 +3,7 @@ Theme Name: EasyStore Pro RW extension
 Template: easy-store-pro
 Author: Alexej Bogačev (RAIN WOLF s.r.o.)
 Description: This is a child theme of EasyStore Pro.
-Version: 1.8.3
+Version: 1.8.4
 */
 
 
@@ -31,6 +31,9 @@ h2.woocommerce-loop-product__title {
 
 .woocommerce .product-categories li a {
     margin-bottom: 7px!important;
+    padding-left: 5px!important;
+    font-size: 99%!important;
+    line-height: 1.7!important;
 }
 
 .woocommerce .product-categories > li > a::before{
@@ -53,6 +56,7 @@ h2.woocommerce-loop-product__title {
 
 #sidebar-shop  {
     float: left;
+    width: 23%;
 }
 
 /*.show-categories {
@@ -147,6 +151,7 @@ h2.woocommerce-loop-product__title {
 
 .widget-woocommerce-currency-switcher h4 {
     margin-bottom: 2px!important;
+    font-size: 18px!important;
 }
 
 @media (max-width: 840px) {
